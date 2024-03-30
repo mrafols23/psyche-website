@@ -1,0 +1,301 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------
+   |                  | 
+   |     HEADER       |
+   |                  |
+   -------------------- */
+header{
+    width: 85em;
+    position: fixed;
+    background-color: #fff;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+.container{
+    display: flex;
+    padding: 2em 0 0 2em;
+}
+
+.navbar{
+    flex: 2;
+    text-align: right;
+}
+
+.navbar .navbar-list .navbar-items {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    margin-right: 20px;
+    padding-top: 5px; 
+}
+
+.btn{
+    display: inline-block;
+    background-color:#4fadeb;
+    color:#fff;
+    padding: 15px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+
+.btn:hover{
+    background: #2087cb;
+}
+/* --------------------
+   |                  | 
+   | HOMEPAGE CONTENT |
+   |                  |
+   -------------------- */
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: url(./assets/images/home.jpg);
+    background-size: contain;
+    margin: auto;
+    padding-left: 5px;
+}
+
+.col2{
+    /* flex-basis: 50%;
+    min-width: 300px; */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2em;
+}
+
+.col2 img{
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+.col2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 10px 0;
+    color: black;
+}
+
+.col2 p{
+    padding-bottom: 1em;
+}
+
+.col3{
+    flex-basis: 50%;
+    min-width: 300px;    
+    background-color: bisque;
+}
+
+
+
+/* --------------------
+   |                  | 
+   |    ABOUT US      |
+   |                  |
+   -------------------- */
+
+
+
+.homeABOUT{
+    align-content: center;
+    
+}
+.homeABOUT h2{
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-left: 26em;
+}
+
+.about-HP{
+    /* background: linear-gradient(to top left,#F8D1C9,#D2A5A8	, #A58F9B, #6A768B, #50637C, #334961); */
+    margin-top: 10px;
+    margin-bottom: 50px;
+    padding: 4em;
+    background-color: bisque;
+}
+
+.about-HP .col2 img{
+    border-radius: 50%;
+    padding: 50px;
+    width: 80%;
+}
+
+small{
+    color: black;
+}
+
+.row2{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    padding-left: 5px;
+}
+/* --------------------
+   |                  | 
+   |     FOOTER       |
+   |                  |
+   -------------------- */
+
+.container-footer {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #666;
+}
+
+/* --------------------
+   |                  | 
+   |     LOG IN       |
+   |                  |
+   -------------------- */
+
+.row-login{
+  align-items: left;
+  margin-top: 3em;
+}
+.col4{
+  flex-basis: 50%;
+  min-width: 300px;
+}
+.col5 img{
+  padding-right: 100px;
+  padding-bottom: 100px;
+}
+.logo-login{
+  align-items: center;
+}
+
+.center{
+  margin-top: 50px;
+    display: inline-block;
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+  }
+  .center h1{
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 1px solid silver;
+  }
+  .center form{
+    padding: 0 40px;
+    box-sizing: border-box;
+  }
+  form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+  }
+  .txt_field input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+  }
+  .txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  .txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9;
+    transition: .5s;
+  }
+  .txt_field input:focus ~ label,
+  .txt_field input:valid ~ label{
+    top: -5px;
+    color: #2691d9;
+  }
+  .txt_field input:focus ~ span::before,
+  .txt_field input:valid ~ span::before{
+    width: 100%;
+  }
+  .pass{
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+  }
+  .pass:hover{
+    text-decoration: underline;
+  }
+  input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+  }
+  input[type="submit"]:hover{
+    border-color: #2691d9;
+    transition: .5s;
+  }
+  .signup_link{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+  }
+  .signup_link a{
+    color: #2691d9;
+    text-decoration: none;
+  }
+  .signup_link a:hover{
+    text-decoration: underline;
+  }
+  
