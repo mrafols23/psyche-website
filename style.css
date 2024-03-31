@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 *{
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 /* --------------------
@@ -8,18 +10,7 @@
    |     HEADER       |
    |                  |
    -------------------- */
-header{
-    width: 85em;
-    position: fixed;
-    background-color: #fff;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-}
-.container{
-    display: flex;
-    padding: 2em 0 0 2em;
-}
+
 
 .navbar{
     flex: 2;
@@ -27,27 +18,48 @@ header{
     display: flex;
 }
 
-.navbar .navbar-list .navbar-items {
-    text-decoration: none;
-    color: black;
-    display: inline-block;
-    margin-right: 20px;
-    padding-top: 5px; 
-}
+nav{
+  background: #fff;
+  width: 100%;
+  padding: 5px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
 
+}
+nav ul{
+  width: 100%;
+  text-align: right;
+}
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 10px;
+}
+nav ul li a{
+  color: black;
+  text-decoration: none;
+}
+.logo-homepage{
+  padding-left: 2em;
+  width: 200px;
+}
 .btn{
     display: inline-block;
     background-color:#4fadeb;
     color:#fff;
-    padding: 15px 30px;
+    padding: 10px 20px;
     margin: 30px 0;
     border-radius: 30px;
     transition: background 0.5s;
 }
 
+
 .btn:hover{
     background: #2087cb;
 }
+
 /* --------------------
    |                  | 
    | HOMEPAGE CONTENT |
@@ -68,6 +80,7 @@ header{
 .col2{
     /* flex-basis: 50%;
     min-width: 300px; */
+    display: inline-block;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 2em;
 }
@@ -78,7 +91,7 @@ header{
 }
 
 .col2 h1{
-    font-size: 50px;
+    font-size: 30px;
     line-height: 60px;
     margin: 10px 0;
     color: black;
@@ -88,10 +101,19 @@ header{
     padding-bottom: 1em;
 }
 
+.col2 a{
+  color: #fff;
+  text-decoration: none;
+}
+
 .col3{
     flex-basis: 50%;
     min-width: 300px;    
     background-color: bisque;
+}
+.col3-1{
+    flex-basis: 50%;
+    min-width: 300px;
 }
 
 
@@ -199,11 +221,14 @@ footer {
   padding-bottom: 100px;
 }
 .logo-login{
+  margin-left: 10em;
   align-items: center;
+  width: 450;
 }
 
 .center{
-  margin-top: 50px;
+    margin-top: 50px;
+
     display: inline-block;
     width: 400px;
     background: white;
@@ -299,6 +324,7 @@ footer {
   .signup_link a:hover{
     text-decoration: underline;
   }
+
         /* CSS styles */
         .appointment-indicator {
           width: 20px;
@@ -422,6 +448,123 @@ footer {
 
 
 
-.unavailable-doctor-info:hover{
+
+  
+  
+/* --------------------
+   |                  | 
+   |     SIGN UP      |
+   |                  |
+   -------------------- */
+
+.logo-signup{
+  display: block;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  margin-left: 30em;
+  margin-right: auto;
+  width: 30%;
+}
+.row-signup{
+  display: flex;
+}
+section{
+  margin-left: 10em;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background: #fff;
+  padding: 5em;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+section header{
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+section .form{
+  margin-top: 30px;
+}
+
+.form .input-box{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.input-box label {
+  color: #333;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 2.5em;
+}
+.form .gender-box {
+  margin-top: 20px;
+}
+
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: #2691d9;
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color: #707070;
+}
+
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #2691d9;
+}
+.form button:hover {
+
   background: #2087cb;
 }
