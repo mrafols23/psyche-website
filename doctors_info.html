@@ -33,19 +33,51 @@
                     <li class="navbar-items"><a href="" class="btn">Sign Up</a></li>
                                   
                 </ul>
+                <br>
             </nav>
         </div>
     </header>
 
-    <div class="row" id="homepage-welcome">
-        <div class="col2">
-            <h1>Book an appointment now!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> 
-                Numquam ipsum sunt omnis alias fugit ea sit ad illo, <br>
-                corporis officia eligendi dignissimos quo, <br>
-            </p>
-                <a href="login.html" class="btn">Make an Appointment</a>
+    <div class="row" id="homepage-doctors">
+        <div class="col4">
+            <br>
+            <h1>The Psyche-Doctors Information!</h1>
+            <p><center>YOUR CHOSEN DOCTOR</center> </p>
+            <!-- Doctor information - Doctor 1 -->
+            <div class="doctor-info-container">
+               
+                <div class="section">
+                    <center><img class="doctor-pic" src="https://via.placeholder.com/150" alt="Doctor Image"></center>
+                </div>
+                <div class="section">
+                    <center><h2 id="doctor-name">DR. NAKI KWAK</h2></center>
+                </div>
+            <div class="section">
+                <h2>Available Time:</h2>
+                <p id="doctor-availability">9:00 AM - 12 NOON</p>
+            </div>
+            <div class="section">
+                <h2>Available Date:</h2>
+                <p id="doctor-availability">Saturday and Sunday</p>
+            </div>
+            <div class="section">
+                <h2>Contact Information</h2>
+                <p id="doctor-mobile">Mobile Number: 123-456-7890</p>
+                <p id="doctor-email">Email: NakiKwak@gmail.com</p>
+            </div>
+            <div class="section">
+                <h2>License Information</h2>
+                <p id="doctor-license">PRC License No.: 1234567</p>
+                </div>
+                <br>
+                <br>
+                <!-- Back Link -->
+                <center><a href="doctors.html" class="back-link">Go Back</a></center>
+            </div>
         </div>
+        </div>
+    </div>
+    
         <div class="col3">
             <img src="./assets/images/homepage-1.jpg" width="961" alt="homepage-pic">
         </div>
@@ -87,5 +119,33 @@
             </div>
         </div>
     </footer>
+    <script>
+        var chosenDoctor = null;
+
+        // Function to toggle appointment indicator
+        function toggleAppointmentIndicator(element) {
+            var appointmentIndicator = element.querySelector('.appointment-indicator');
+            appointmentIndicator.classList.toggle('appointed');
+
+            var chosenDoctorText = element.querySelector('.chosen-doctor-text');
+            chosenDoctorText.style.display = appointmentIndicator.classList.contains('appointed') ? 'inline' : 'none';
+
+            // Store chosen doctor if appointed
+            chosenDoctor = appointmentIndicator.classList.contains('appointed') ? element.querySelector('h2').innerText : null;
+        }
+
+        // Function to redirect to doctor info form
+        function redirectToDoctorInfo() {
+            if (chosenDoctor) {
+                // Redirect to doctor info form with chosen doctor's information
+                window.location.href = "doctor_info_form.html?doctor=" + encodeURIComponent(chosenDoctor);
+            } else {
+                alert("Please choose a doctor first!");
+            }
+        }
+
+
+
+    </script>
 </body>
 </html>

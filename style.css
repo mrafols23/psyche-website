@@ -24,6 +24,7 @@ header{
 .navbar{
     flex: 2;
     text-align: right;
+    display: flex;
 }
 
 .navbar .navbar-list .navbar-items {
@@ -298,4 +299,129 @@ footer {
   .signup_link a:hover{
     text-decoration: underline;
   }
+        /* CSS styles */
+        .appointment-indicator {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%; /* Makes it a circle */
+          background-color: gray; /* Default color */
+          display: inline-block;
+          vertical-align: middle; /* Align vertically with text */
+      }
+
+      .appointment-indicator.appointed {
+          background-color: green; /* Change color when appointed */
+      }
+
+      .chosen-doctor-text {
+          display: none;
+          color: green;
+          font-size: 12px; /* Adjust font size */
+          vertical-align: middle; /* Align vertically with circle */
+      }
+
+      /*        sdfsd*/
+
+      .doctor-info-container {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .doctor-pic {
+        width: 200px;
+        border-radius: 5px;
+    }
+
+    .section {
+        border: 3px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        color: #333;
+        margin-top: 0;
+    }
+
+
+    .back-link {
+      background-color: #4fadeb;
+      color: #fff;
+      border: none;
+      padding: 15px 60px;
+      border-radius: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      padding-bottom: 1em;
+      font-style: bold;
+      font-size: 15px;
+  }
+
+  .back-link:hover {
+      background-color: #007bff;
+  }
+
+  .back-link::before {
+      content: "\2190"; /* Unicode character for left arrow */
+  }
+
+  /* col 4 */
+
+  .col4{
+    /* flex-basis: 50%;
+    min-width: 300px; */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10em;
+}
+
+.col4 img{
+    max-width: 100%;
+    padding: 20px 0;
+}
+
+.col4 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 10px 0;
+    color: black;
+}
+
+.col4 p{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+/* Style for unavailable doctor info */
+.unavailable-doctor-info {
+  opacity: 0.7; /* Reduce opacity to indicate unavailability */
+  pointer-events: none; /* Disable pointer events to make it unclickable */
+    display: inline-block;
+    background-color:#4fadeb;
+    color:#fff;
+    padding: 15px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
   
+}
+
+.btn1{
+  display: inline-block;
+  background-color:#addeff;
+  color:#fff;
+  padding: 15px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+  pointer-events: none;
+}
+
+.btn1:hover{
+  background: #2087cb;
+}
+
+
+
+.unavailable-doctor-info:hover{
+  background: #2087cb;
+}
