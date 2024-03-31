@@ -326,6 +326,8 @@ footer {
 
 .logo-signup{
   display: block;
+  padding-top: 2em;
+  padding-bottom: 2em;
   margin-left: 30em;
   margin-right: auto;
   width: 30%;
