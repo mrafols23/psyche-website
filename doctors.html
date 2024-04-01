@@ -9,20 +9,12 @@
 </head>
 <body>
     <header class="header">
-        <!-- to remove hyper link -->
-        <style>
-            a:link, a:visited{ 
-              text-decoration: none!important;
-              cursor: pointer;
-            }
-        </style>
-
+        <!-- ------HEADER-------- -->
         <div class="container">
-            <a href="#" class="logo">
-                <img src="./assets/images/Psyche_logo.png" width="200" alt="Doclab home">
-            </a>
-
             <nav class="navbar" data-navbar>
+                <a href="#" class="logo">
+                    <img src="./assets/images/Psyche_logo.png" width="200px" class="logo-homepage">
+                </a>
                 <ul class="navbar-list">
                     <li class="navbar-items"><a href="index.html">Home</a></li>
                     <li class="navbar-items"><a href="doctors.html">Doctors</a></li>
@@ -30,24 +22,28 @@
                     <li class="navbar-items">About</li>
                     <li class="navbar-items">Contact Us</li>
                     <li class="navbar-items"><a href="login.html" class="btn">Log In</a></li> 
-                    <li class="navbar-items"><a href="" class="btn">Sign Up</a></li>
-                                  
+                    <li class="navbar-items"><a href="signup.html" class="btn">Sign Up</a></li>     
                 </ul>
             </nav>
         </div>
-    </header>
+
+        <!-- -----------HOMEPAGE CONTENTS-------------- -->
+        <div class="addrow">
+
+        </div>
 
     <div class="row" id="homepage-doctors">
         <div class="col2">
+            
             <h1>Welcome to Psyche-Doctors!</h1>
             <p><center>LIST OF DOCTORS THAT IS AVAILABLE:</center> </p>
 
             <!-- Doctor information - Doctor 1 -->
             <a href="doctors_info.html" class="btn">
-                <img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
                 <div class="doctor-info">
                     <h2>Dr. Naki Kwak</h2><br>
-                    <p>Availability: Available</p>
+                    <p>Availability: <span style="color: green;">Available</span></p>
                     <p>Room Number: 102</p>
                     <!-- Indicator for appointment -->
                     <div class="appointment-indicator"></div>
@@ -57,10 +53,10 @@
 
             <!-- Doctor information - Doctor 2 -->
             <a href="doctors_info.html" class="btn">
-                <img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
                 <div class="doctor-info">
                     <h2>Dr. Naki Kwak</h2><br>
-                    <p>Availability: Available</p>
+                    <p>Availability: <span style="color: green;">Available</span></p>
                     <p>Room Number: 104</p>
                     <!-- Indicator for appointment -->
                     <div class="appointment-indicator"></div>
@@ -70,10 +66,10 @@
 
             <!-- Doctor information - Doctor 3 -->
             <a href="doctors_info.html" class="btn">
-                <img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
                 <div class="doctor-info">
                     <h2>Dr. Naki Kwak</h2><br>
-                    <p>Availability: Available</p>
+                    <p>Availability: <span style="color: green;">Available</span></p>
                     <p>Room Number: 106</p>
                     <!-- Indicator for appointment -->
                     <div class="appointment-indicator"></div>
@@ -83,10 +79,10 @@
 
             <!-- Doctor information - Doctor 4 -->
             <a href="doctors_info.html" class="btn">
-                <img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
                 <div class="doctor-info">
                     <h2>Dr. Naki Kwak</h2><br>
-                    <p>Availability: Available</p>
+                    <p>Availability: <span style="color: green;">Available</span></p>
                     <p>Room Number: 108</p>
                     <!-- Indicator for appointment -->
                     <div class="appointment-indicator"></div>
@@ -96,22 +92,23 @@
 
             <!-- Doctor information - Doctor 5 -->
             <a href="doctors_info.html" class="btn">
-                <img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
                 <div class="doctor-info">
                     <h2>Dr. Naki Kwak</h2><br>
-                    <p>Availability: Available</p>
+                    <p>Availability: <span style="color: green;">Available</span></p>
                     <p>Room Number: 110</p>
                     <!-- Indicator for appointment -->
                     <div class="appointment-indicator"></div>
                     <span class="chosen-doctor-text">You have chosen this doctor</span>
                 </div>
             </a>
-            <!-- Doctor information - Doctor 6 -->
+
+              <!-- Doctor information - Doctor 1 (Unavailable) -->
             <a href="doctors_info.html" class="btn1">
-                <img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
                 <div class="doctor-info">
                     <h2>Dr. Naki Kwak</h2><br>
-                    <p>Availability: Unavailable</p>
+                    <p>Availability: <span style="color: red;">Unavailable</span></p>
                     <p>Room Number: 110</p>
                     <!-- Indicator for appointment -->
                     <div class="appointment-indicator"></div>
@@ -119,42 +116,12 @@
                 </div>
             </a>
 
-            <p><center>LIST OF DOCTORS THAT IS UNAVAILABLE:</center> </p>
-            
-            <!-- Doctor information - Doctor 1 (Unavailable) -->
+                     
+        </div>
+        </div>
+    </div>
+        </div>
 
-
-        <a href="doctors_info.html" class="btn1">
-          <img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image">
-         <div class="doctor-info">
-        <h2>Dr. Sea Dagat</h2><br>
-        <p>Availability: Unavailable</p>
-        <p>Room Number: 120</p>
-        <div class="appointment-indicator"></div>
-        <span class="chosen-doctor-text">This doctor is currently unavailable</span>
-    </div>
-    </a>
-        </div>
-        </div>
-        <div class="col3">
-            <img src="./assets/images/homepage-1.jpg" width="961" alt="homepage-pic">
-        </div>
-    </div>
-
-    <div class="homeABOUT">
-        <h2 class="title">About Us</h2>
-    </div>
-    
-    <div class="small-container about-HP">
-        <div class="row2">
-            <div class="col3">
-                <img src="./assets/images/Psyche_logo.png">
-            </div>
-            <div class="col3">
-                <small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, sapiente. Officia doloribus, saepe sit quae obcaecati vitae veritatis ratione accusantium, ipsum quo eum sint aliquam nulla alias, quibusdam modi odio.
-            </div>
-        </div>
-    </div>
 
     <!-- FOOTER -->
     <footer>

@@ -91,15 +91,19 @@ nav ul li a{
 }
 
 .col2 h1{
-    font-size: 30px;
+    font-size: 50px;
     line-height: 60px;
     margin: 10px 0;
     color: black;
+    text-align: center;
 }
 
 .col2 p{
     padding-bottom: 1em;
+    font-size: 14px;
 }
+
+ 
 
 .col2 a{
   color: #fff;
@@ -347,7 +351,17 @@ footer {
       }
 
       /*        sdfsd*/
+      .green-text {
+        color: green;
+      }
+    
+      .red-text {
+        color: red;
+      }
 
+      .addrow{
+        padding: 70px; 
+      }
       .doctor-info-container {
         flex: 1;
         margin-right: 20px;
