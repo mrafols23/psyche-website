@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psyche</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <!-- ------HEADER-------- -->
+        <div class="container">
+            <nav class="navbar" data-navbar>
+                <a href="#" class="logo">
+                    <img src="./assets/images/Psyche_logo.png" width="200px" class="logo-homepage">
+                </a>
+                <ul class="navbar-list">
+                    <li class="navbar-items"><a href="index.html">Home</a></li>
+                    <li class="navbar-items"><a href="doctors.html">Doctors</a></li>
+                    <li class="navbar-items">Appointments</li>
+                    <li class="navbar-items">About</li>
+                    <li class="navbar-items">Contact Us</li>
+                    <li class="navbar-items"><a href="login.html" class="btn">Log In</a></li> 
+                    <li class="navbar-items"><a href="signup.html" class="btn">Sign Up</a></li>     
+                </ul>
+            </nav>
+        </div>
+
+        <!-- -----------HOMEPAGE CONTENTS-------------- -->
+        <div class="addrow">
+
+        </div>
+
+    <div class="row" id="homepage-doctors">
+        <div class="col2">
+            
+            <h1>Welcome to Psyche-Doctors!</h1>
+            <p><center>LIST OF DOCTORS THAT IS AVAILABLE:</center> </p>
+
+            <!-- Doctor information - Doctor 1 -->
+            <a href="doctors_info.html" class="btn">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
+                <div class="doctor-info">
+                    <h2>Dr. Naki Kwak</h2><br>
+                    <p>Availability: <span style="color: green;">Available</span></p>
+                    <p>Room Number: 102</p>
+                    <!-- Indicator for appointment -->
+                    <div class="appointment-indicator"></div>
+                    <span class="chosen-doctor-text">You have chosen this doctor</span>
+                </div>
+            </a>
+
+            <!-- Doctor information - Doctor 2 -->
+            <a href="doctors_info.html" class="btn">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
+                <div class="doctor-info">
+                    <h2>Dr. Naki Kwak</h2><br>
+                    <p>Availability: <span style="color: green;">Available</span></p>
+                    <p>Room Number: 104</p>
+                    <!-- Indicator for appointment -->
+                    <div class="appointment-indicator"></div>
+                    <span class="chosen-doctor-text">You have chosen this doctor</span>
+                </div>
+            </a>
+
+            <!-- Doctor information - Doctor 3 -->
+            <a href="doctors_info.html" class="btn">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
+                <div class="doctor-info">
+                    <h2>Dr. Naki Kwak</h2><br>
+                    <p>Availability: <span style="color: green;">Available</span></p>
+                    <p>Room Number: 106</p>
+                    <!-- Indicator for appointment -->
+                    <div class="appointment-indicator"></div>
+                    <span class="chosen-doctor-text">You have chosen this doctor</span>
+                </div>
+            </a>
+
+            <!-- Doctor information - Doctor 4 -->
+            <a href="doctors_info.html" class="btn">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
+                <div class="doctor-info">
+                    <h2>Dr. Naki Kwak</h2><br>
+                    <p>Availability: <span style="color: green;">Available</span></p>
+                    <p>Room Number: 108</p>
+                    <!-- Indicator for appointment -->
+                    <div class="appointment-indicator"></div>
+                    <span class="chosen-doctor-text">You have chosen this doctor</span>
+                </div>
+            </a>
+
+            <!-- Doctor information - Doctor 5 -->
+            <a href="doctors_info.html" class="btn">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
+                <div class="doctor-info">
+                    <h2>Dr. Naki Kwak</h2><br>
+                    <p>Availability: <span style="color: green;">Available</span></p>
+                    <p>Room Number: 110</p>
+                    <!-- Indicator for appointment -->
+                    <div class="appointment-indicator"></div>
+                    <span class="chosen-doctor-text">You have chosen this doctor</span>
+                </div>
+            </a>
+
+              <!-- Doctor information - Doctor 1 (Unavailable) -->
+            <a href="doctors_info.html" class="btn1">
+                <center><img src="https://via.placeholder.com/150" alt="Doctor Placeholder Image"></center>
+                <div class="doctor-info">
+                    <h2>Dr. Naki Kwak</h2><br>
+                    <p>Availability: <span style="color: red;">Unavailable</span></p>
+                    <p>Room Number: 110</p>
+                    <!-- Indicator for appointment -->
+                    <div class="appointment-indicator"></div>
+                    <span class="chosen-doctor-text">This doctor is currently unavailable</span>
+                </div>
+            </a>
+
+                     
+        </div>
+        </div>
+    </div>
+        </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>Your Hospital is dedicated to providing the highest quality healthcare services to our community.</p>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Information</h3>
+                    <p>123 Hospital St.</p>
+                    <p>City, State, Zip</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>Email: info@yourhospital.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Your Hospital | All rights reserved
+            </div>
+        </div>
+    </footer>
+    <script>
+        var chosenDoctor = null;
+
+        // Function to toggle appointment indicator
+        function toggleAppointmentIndicator(element) {
+            var appointmentIndicator = element.querySelector('.appointment-indicator');
+            appointmentIndicator.classList.toggle('appointed');
+
+            var chosenDoctorText = element.querySelector('.chosen-doctor-text');
+            chosenDoctorText.style.display = appointmentIndicator.classList.contains('appointed') ? 'inline' : 'none';
+
+            // Store chosen doctor if appointed
+            chosenDoctor = appointmentIndicator.classList.contains('appointed') ? element.querySelector('h2').innerText : null;
+        }
+
+        // Function to redirect to doctor info form
+        function redirectToDoctorInfo() {
+            if (chosenDoctor) {
+                // Redirect to doctor info form with chosen doctor's information
+                window.location.href = "doctor_info_form.html?doctor=" + encodeURIComponent(chosenDoctor);
+            } else {
+                alert("Please choose a doctor first!");
+            }
+        }
+    </script>
+</body>
+</html>

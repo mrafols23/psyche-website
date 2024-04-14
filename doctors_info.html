@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psyche</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <!-- ------HEADER-------- -->
+        <div class="container">
+            <nav class="navbar" data-navbar>
+                <a href="#" class="logo">
+                    <img src="./assets/images/Psyche_logo.png" width="200px" class="logo-homepage">
+                </a>
+                <ul class="navbar-list">
+                    <li class="navbar-items"><a href="index.html">Home</a></li>
+                    <li class="navbar-items"><a href="doctors.html">Doctors</a></li>
+                    <li class="navbar-items">Appointments</li>
+                    <li class="navbar-items">About</li>
+                    <li class="navbar-items">Contact Us</li>
+                    <li class="navbar-items"><a href="login.html" class="btn">Log In</a></li> 
+                    <li class="navbar-items"><a href="signup.html" class="btn">Sign Up</a></li>     
+                </ul>
+            </nav>
+        </div>
+
+        <!-- -----------HOMEPAGE CONTENTS-------------- -->
+
+    <div class="row" id="homepage-doctors">
+        <div class="col4">
+            <br>
+            <h1><center>The Psyche-Doctors Information!</h1></center>
+            <p><center>YOUR CHOSEN DOCTOR</center> </p>
+            <!-- Doctor information - Doctor 1 -->
+            <div class="doctor-info-container">
+               
+                <div class="section">
+                    <center><img class="doctor-pic" src="https://via.placeholder.com/150" alt="Doctor Image"></center>
+                </div>
+                <div class="section">
+                    <center><h2 id="doctor-name">DR. NAKI KWAK</h2></center>
+                </div>
+            <div class="section">
+                <h2>Available Time:</h2>
+                <p id="doctor-availability">9:00 AM - 12 NOON</p>
+            </div>
+            <div class="section">
+                <h2>Available Date:</h2>
+                <p id="doctor-availability">Saturday and Sunday</p>
+            </div>
+            <div class="section">
+                <h2>Contact Information</h2>
+                <p id="doctor-mobile">Mobile Number: 123-456-7890</p>
+                <p id="doctor-email">Email: NakiKwak@gmail.com</p>
+            </div>
+            <div class="section">
+                <h2>License Information</h2>
+                <p id="doctor-license">PRC License Number: 1234567</p>
+                </div>
+                <br>
+                <br>
+                <!-- Back Link -->
+                <center><a href="doctors.html" class="back-link">Go Back</a></center>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>Your Hospital is dedicated to providing the highest quality healthcare services to our community.</p>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Information</h3>
+                    <p>123 Hospital St.</p>
+                    <p>City, State, Zip</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>Email: info@yourhospital.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Your Hospital | All rights reserved
+            </div>
+        </div>
+    </footer>
+    <script>
+        var chosenDoctor = null;
+
+        // Function to toggle appointment indicator
+        function toggleAppointmentIndicator(element) {
+            var appointmentIndicator = element.querySelector('.appointment-indicator');
+            appointmentIndicator.classList.toggle('appointed');
+
+            var chosenDoctorText = element.querySelector('.chosen-doctor-text');
+            chosenDoctorText.style.display = appointmentIndicator.classList.contains('appointed') ? 'inline' : 'none';
+
+            // Store chosen doctor if appointed
+            chosenDoctor = appointmentIndicator.classList.contains('appointed') ? element.querySelector('h2').innerText : null;
+        }
+
+        // Function to redirect to doctor info form
+        function redirectToDoctorInfo() {
+            if (chosenDoctor) {
+                // Redirect to doctor info form with chosen doctor's information
+                window.location.href = "doctor_info_form.html?doctor=" + encodeURIComponent(chosenDoctor);
+            } else {
+                alert("Please choose a doctor first!");
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
