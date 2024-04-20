@@ -350,6 +350,11 @@ footer {
           vertical-align: middle; /* Align vertically with circle */
       }
 
+       /* payment-row */
+      .addrow1{
+        padding: 20px; 
+      }
+
       /*        sdfsd*/
       .green-text {
         color: green;
@@ -362,6 +367,7 @@ footer {
       .addrow{
         padding: 70px; 
       }
+
       .doctor-info-container {
         flex: 1;
         margin-right: 20px;
@@ -396,6 +402,7 @@ footer {
       padding-bottom: 1em;
       font-style: bold;
       font-size: 15px;
+      margin-right: 80px;
   }
 
   .back-link:hover {
@@ -403,8 +410,30 @@ footer {
   }
 
   .back-link::before {
-      content: "\2190"; /* Unicode character for left arrow */
+      content: "\21D0"; /* Unicode character for left arrow */
   }
+
+
+  .forward-link {
+    background-color: #4fadeb;
+    color: #fff;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    padding-bottom: 1em;
+    font-style: bold;
+    font-size: 15px;
+}
+
+.forward-link:hover {
+    background-color: #007bff;
+}
+
+.forward-link:before {
+    content: "\21D2"; /* Unicode character for left arrow */
+}
 
   /* col 4 */
 
@@ -429,7 +458,7 @@ footer {
 
 .col4 p{
     padding-top: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 0em;
 }
 /* Style for unavailable doctor info */
 .unavailable-doctor-info {

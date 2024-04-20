@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psyche</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <!-- ------HEADER-------- -->
+        <div class="container">
+            <nav class="navbar" data-navbar>
+                <a href="#" class="logo">
+                    <img src="./assets/images/Psyche_logo.png" width="200px" class="logo-homepage">
+                </a>
+                <ul class="navbar-list">
+                    <li class="navbar-items"><a href="index.html">Home</a></li>
+                    <li class="navbar-items"><a href="doctors.html">Doctors</a></li>
+                    <li class="navbar-items">Appointments</li>
+                    <li class="navbar-items">About</li>
+                    <li class="navbar-items">Contact Us</li>
+                    <li class="navbar-items"><a href="login.html" class="btn">Log In</a></li> 
+                    <li class="navbar-items"><a href="signup.html" class="btn">Sign Up</a></li>     
+                </ul>
+            </nav>
+        </div>
+
+        <!-- -----------HOMEPAGE CONTENTS-------------- -->
+        <div class="addrow1">
+
+        </div>
+
+        <div class="row" id="homepage-payment">
+            <div class="col4">
+                <center>
+                    <h1>Payment Method</h1>
+                    <form id="paymentForm">
+                        <label for="receiptNo">Receipt No.:</label><br>
+                        <input type="text" id="receiptNo" name="receiptNo" readonly><br><br>
+                        
+                        <label for="totalAmount">Total Amount:</label><br>
+                        <input type="text" id="totalAmount" name="totalAmount" readonly value="Php 0.00"><br><br>
+                        
+                        <button type="button" id="overCounterButton" class="btn">Over the Counter</button>
+                        <button type="button" id="onlinePaymentButton" class="btn">Online Payment</button><br><br>
+                
+                        <div id="overCounterPayment" style="display: none;">
+                            <label for="patientNumber">Patient Number:</label><br>
+                            <textarea id="patientNumber" name="patientNumber"></textarea><br><br>
+                            <button type="button" id="payOverCounterButton" class="btn">Pay Over the Counter</button>
+                        </div>
+
+                        <!-- the original code
+                        <div id="overCounterPayment" style="display: none;">
+                            <label for="clinicAddress">Clinic Address:</label><br>
+                            <textarea id="clinicAddress" name="clinicAddress"></textarea><br><br>
+                            <button type="button" id="payOverCounterButton" class="btn">Pay Over the Counter</button>
+                        </div>
+                        -->
+                        <div id="onlinePaymentOptions" style="display: none;">
+                            <p><b>THESE ARE ONLINE PAYMENT METHODS:</p></b> 
+                            <button type="button" id="eWalletButton" class="btn">E-Wallet</button>
+                            <button type="button" id="creditCardButton" class="btn">Credit/Debit Card</button><br><br>
+                            
+                            <div id="eWalletPayment" style="display: none;">
+                                <label for="eWalletReceiptNo">Receipt No.:</label><br>
+                                <input type="text" id="eWalletReceiptNo" name="eWalletReceiptNo" readonly><br><br>
+                                
+                                <label for="eWalletTotalAmount">Total Amount:</label><br>
+                                <input type="text" id="eWalletTotalAmount" name="eWalletTotalAmount" readonly value="Php 0.00"><br><br>
+                                
+                                <label for="mobileNumber">Mobile Number:</label><br>
+                                <input type="text" id="mobileNumber" name="mobileNumber"><br><br>
+                                <button type="button" id="generateQRButton" class="btn">Generate QR Code</button><br>
+                                <canvas id="qrCodeCanvas"></canvas> <br>
+                                <!-- Container for QR code -->
+
+                                <button type="button" id="payEWalletButton" class="btn">Pay Now</button>
+                                
+                            </div>
+
+                            <div id="creditCardPayment" style="display: none;">
+                                <label for="firstName">First Name:</label><br>
+                                <input type="text" id="firstName" name="firstName"><br><br>
+                                
+                                <label for="lastName">Last Name:</label><br>
+                                <input type="text" id="lastName" name="lastName"><br><br>
+                                
+                                <label for="cardNumber">Card Number:</label><br>
+                                <input type="text" id="cardNumber" name="cardNumber"><br><br>
+                                
+                                <label for="expiryDate">Expiry Date:</label><br>
+                                <input type="text" id="expiryDate" name="expiryDate"><br><br>
+                                
+                                <label for="cvv">CVV:</label><br>
+                                <input type="text" id="cvv" name="cvv"><br><br>
+                                
+                                <button type="button" id="payCreditCardButton" class="btn">Pay Now</button>
+                            </div>
+                        </div>
+                        
+                        <!--button type="submit" id="proceedButton">Proceed to Payment</button-->
+                        <button type="button" id="backToMainMenuButton" style="display: none;">Back to Main Menu</button>
+                    </form>
+                
+                
+    </center>
+</div>
+</div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="container-footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Us</h3>
+                    <p>Your Hospital is dedicated to providing the highest quality healthcare services to our community.</p>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Information</h3>
+                    <p>123 Hospital St.</p>
+                    <p>City, State, Zip</p>
+                    <p>Phone: 123-456-7890</p>
+                    <p>Email: info@yourhospital.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Your Hospital | All rights reserved
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+
+        document.getElementById("paymentForm").addEventListener("submit", function(event) {
+            // Prevent form submission
+            event.preventDefault();
+        });
+    
+        document.getElementById("overCounterButton").addEventListener("click", function() {
+            document.getElementById("overCounterPayment").style.display = "block";
+            document.getElementById("onlinePaymentOptions").style.display = "none";
+        });
+    
+        document.getElementById("onlinePaymentButton").addEventListener("click", function() {
+            document.getElementById("overCounterPayment").style.display = "none";
+            document.getElementById("onlinePaymentOptions").style.display = "block";
+        });
+    
+        document.getElementById("eWalletButton").addEventListener("click", function() {
+            document.getElementById("eWalletPayment").style.display = "block";
+            document.getElementById("creditCardPayment").style.display = "none";
+        });
+
+        document.getElementById("generateQRButton").addEventListener("click", function() {
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            if (mobileNumber.trim() === "") {
+                alert("Please enter mobile number.");
+            } else {
+                // Clear previous QR code
+                var qrCodeCanvas = document.getElementById("qrCodeCanvas");
+                qrCodeCanvas.getContext('2d').clearRect(0, 0, qrCodeCanvas.width, qrCodeCanvas.height);
+                // Generate QR code locally
+                new QRious({
+                    element: qrCodeCanvas,
+                    value: mobileNumber
+                });
+            }
+        });
+
+    
+        document.getElementById("creditCardButton").addEventListener("click", function() {
+            document.getElementById("eWalletPayment").style.display = "none";
+            document.getElementById("creditCardPayment").style.display = "block";
+        });
+    
+        document.getElementById("payOverCounterButton").addEventListener("click", function() {
+            var patientNumber = document.getElementById("patientNumber").value;
+            if (patientNumber.trim() === "") {
+                alert("Please enter your 'Patient Number' to verify, if it is you.");
+            } else {
+                var city = prompt("Enter the Location of the City:");
+                if (city !== null && city.trim() !== "") {
+                    alert("Payment done successfully in " + city + " for Over the Counter!");
+                    // Redirect back to index.html
+                    window.location.href = "index.html";
+                } else {
+                    alert("Please enter a valid city name.");
+                }
+            }
+        });
+// original
+//        document.getElementById("payOverCounterButton").addEventListener("click", function() {
+//    var clinicAddress = document.getElementById("clinicAddress").value;
+//             if (clinicAddress.trim() === "") {
+//                 alert("Please enter clinic address.");
+//             } else {
+ //                var city = prompt("Enter City Name:");
+ //                if (city !== null && city.trim() !== "") {
+//                     alert("Payment done successfully in " + city + " for Over the Counter!");
+//                     // Redirect back to index.html
+//                     window.location.href = "index.html";
+//                 } else {
+//                     alert("Please enter a valid city name.");
+//                 }
+//             }
+//         });
+    
+        document.getElementById("payEWalletButton").addEventListener("click", function() {
+            var mobileNumber = document.getElementById("mobileNumber").value;
+            if (mobileNumber.trim() === "") {
+                alert("Please enter mobile number.");
+            } else {
+                // Assuming payment is successful, display confirmation message
+                alert("Payment successful! Amount paid via E-Wallet.");
+                // Redirect back to index.html
+                window.location.href = "index.html";
+            }
+        });
+    
+        document.getElementById("payCreditCardButton").addEventListener("click", function() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var cardNumber = document.getElementById("cardNumber").value;
+            var expiryDate = document.getElementById("expiryDate").value;
+            var cvv = document.getElementById("cvv").value;
+    
+            if (firstName.trim() === "" || lastName.trim() === "" || cardNumber.trim() === "" || expiryDate.trim() === "" || cvv.trim() === "") {
+                alert("Please fill in all the required fields.");
+            } else {
+                // Assuming payment is successful, display confirmation message
+                alert("Payment successful! Amount paid with credit/debit card: \n\n" +
+                    "Name: " + firstName + " " + lastName + "\n" +
+                    "Card Number: " + cardNumber + "\n" +
+                    "Expiry Date: " + expiryDate + "\n" +
+                    "CVV: " + cvv);
+                // Redirect back to index.html
+                window.location.href = "index.html";
+            }
+        });
+    
+        // Dummy function to generate a random receipt number
+        function generateReceiptNumber() {
+            return "REC" + Math.floor(Math.random() * 1000000);
+        }
+    
+        // Set receipt number and total amount values
+        document.getElementById("receiptNo").value = generateReceiptNumber();
+        document.getElementById("eWalletReceiptNo").value = generateReceiptNumber();
+    </script>
+</body>
+</html>
