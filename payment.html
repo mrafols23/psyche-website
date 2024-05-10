@@ -43,12 +43,12 @@
                         <label for="totalAmount">Total Amount:</label><br>
                         <input type="text" id="totalAmount" name="totalAmount" readonly value="Php 0.00"><br><br>
                         
-                        <button type="button" id="overCounterButton" class="btn">Over the Counter</button>
+                        <button type="button" id="overCounterButton" class="btn">Over the Counter</button>  
                         <button type="button" id="onlinePaymentButton" class="btn">Online Payment</button><br><br>
                 
                         <div id="overCounterPayment" style="display: none;">
                             <label for="patientNumber">Patient Number:</label><br>
-                            <textarea id="patientNumber" name="patientNumber"></textarea><br><br>
+                            <input type="text" id="patientNumber" name="patientNumber"><br><br>
                             <button type="button" id="payOverCounterButton" class="btn">Pay Over the Counter</button>
                         </div>
 
@@ -176,9 +176,14 @@
         });
     
         document.getElementById("payOverCounterButton").addEventListener("click", function() {
-            var patientNumber = document.getElementById("patientNumber").value;
-            if (patientNumber.trim() === "") {
-                alert("Please enter your 'Patient Number' to verify, if it is you.");
+            var patientNumber = document.getElementById("patientNumber").value.trim();
+            // Define a regular expression pattern to check for both text and numbers
+             var pattern = /^[a-zA-Z0-9\s]+$/;
+
+             if (patientNumber === "") {
+                alert("Please enter your patient number to verify.");
+            } else if (!pattern.test(patientNumber)) {
+                alert("Invalid patient number. Please enter a valid combination of letters and numbers.");
             } else {
                 var city = prompt("Enter the Location of the City:");
                 if (city !== null && city.trim() !== "") {
@@ -186,7 +191,7 @@
                     // Redirect back to index.html
                     window.location.href = "index.html";
                 } else {
-                    alert("Please enter a valid city name.");
+                    alert("Please enter a Valid City Name.");
                 }
             }
         });
@@ -208,9 +213,11 @@
 //         });
     
         document.getElementById("payEWalletButton").addEventListener("click", function() {
-            var mobileNumber = document.getElementById("mobileNumber").value;
-            if (mobileNumber.trim() === "") {
-                alert("Please enter mobile number.");
+            var mobileNumber = document.getElementById("mobileNumber").value.trim();
+
+            // 11  digits
+            if (mobileNumber.length < 11 || isNaN(mobileNumber)) {
+                alert("Please Enter a Valid Mobile Number with a Minimum of '11 digits'.");
             } else {
                 // Assuming payment is successful, display confirmation message
                 alert("Payment successful! Amount paid via E-Wallet.");
@@ -220,25 +227,56 @@
         });
     
         document.getElementById("payCreditCardButton").addEventListener("click", function() {
-            var firstName = document.getElementById("firstName").value;
-            var lastName = document.getElementById("lastName").value;
-            var cardNumber = document.getElementById("cardNumber").value;
-            var expiryDate = document.getElementById("expiryDate").value;
-            var cvv = document.getElementById("cvv").value;
+    var cardNumber = document.getElementById("cardNumber").value.trim();
+    var expiryDate = document.getElementById("expiryDate").value.trim();
+    var cvv = document.getElementById("cvv").value.trim();
     
-            if (firstName.trim() === "" || lastName.trim() === "" || cardNumber.trim() === "" || expiryDate.trim() === "" || cvv.trim() === "") {
-                alert("Please fill in all the required fields.");
-            } else {
-                // Assuming payment is successful, display confirmation message
-                alert("Payment successful! Amount paid with credit/debit card: \n\n" +
-                    "Name: " + firstName + " " + lastName + "\n" +
-                    "Card Number: " + cardNumber + "\n" +
-                    "Expiry Date: " + expiryDate + "\n" +
-                    "CVV: " + cvv);
-                // Redirect back to index.html
-                window.location.href = "index.html";
-            }
-        });
+    // Check if all required fields are filled in
+    if (cardNumber === "" || expiryDate === "" || cvv === "") {
+        alert("Please fill in all the required fields.");
+        return; // Stop execution if any required field is empty
+    }
+    
+    // Regular expressions for validation
+    var cardNumberPattern = /^\d{4}\s?\d{4}\s?\d{4}\s?\d{4}$/;
+    var expiryDatePattern = /^(0[1-9]|1[0-2])\/\d{2}$/; // Updated to enforce slash
+    var cvvPattern = /^\d{3}$/;
+    
+    // Check card number format and length
+    if (!cardNumberPattern.test(cardNumber)) {
+        alert("Please enter a 'Valid Card Number' with 16 digits and spaces between groups of four digits.");
+    } else if (!expiryDatePattern.test(expiryDate)) {
+        alert("Please enter a valid expiration date in the format MM/YY.");
+    } else {
+        // Ensure a slash is permanently added to the expiry date
+        expiryDate = expiryDate.replace(/(\d{2})(\d{2})/, "$1/$2");
+        
+        // Extract month and year from expiry date
+        var [month, year] = expiryDate.split('/');
+        // Convert year to a full year (e.g., '22' to '2022')
+        var fullYear = "20" + year;
+        // Create Date object for May 2023
+        var may2023 = new Date(2023, 4); // Note: JavaScript months are 0-indexed, so May is represented as 4
+        
+        // Create Date object for the entered expiration date
+        var expiryDateObj = new Date(fullYear, parseInt(month) - 1); // Subtract 1 from month to adjust for 0-indexed months
+        
+        // Check if expiry date is before May 2023
+        if (expiryDateObj < may2023) {
+            alert("Expiration date must be after May 2023.");
+        } else if (!cvvPattern.test(cvv)) {
+            alert("Please enter a valid CVV consisting of 3 digits.");
+        } else {
+            // Assuming payment is successful, display confirmation message
+            alert("Payment successful! Amount paid with credit/debit card.");
+            // Redirect back to index.html
+            window.location.href = "index.html";
+        }
+    }
+});
+
+
+
     
         // Dummy function to generate a random receipt number
         function generateReceiptNumber() {
